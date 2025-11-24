@@ -14,12 +14,16 @@ function App() {
 
   const handleApiCall = async () => {
     try {
+      const url = `${process.env.REACT_APP_API_URL}${apiUrl.startsWith("/") ? "" : "/"}${apiUrl}`;
+      console.log(url);
       let res;
 
       if (apiMethod === "GET") {
-        res = await fetch(apiUrl, { method: "GET" });
+        res = await fetch(url, {
+          method: "GET",
+        });
       } else {
-        res = await fetch(apiUrl, {
+        res = await fetch(url, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
