@@ -129,13 +129,9 @@ function App() {
     setLoadingTxnStatus(true);
     try {
       const res = await fetch(
-        `/relayer/api/v1/relayers/glhf-example/transactions/${parsedJobStatus.transactionId}`,
+        `${process.env.REACT_APP_API_URL}/get-info/get-relayer-transaction?transactionId=${parsedJobStatus.transactionId}`,
         {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_RELAYER_BEARER}`,
-          },
         }
       );
 

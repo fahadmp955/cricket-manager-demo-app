@@ -7,7 +7,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/", // ensure routing works
   },
   module: {
     rules: [
@@ -36,15 +35,6 @@ module.exports = {
     },
     compress: true,
     port: 2020,
-    proxy: [
-      {
-        context: ["/relayer"],
-        target: "https://cm-relayer.dev.munna-bhai.xyz",
-        changeOrigin: true,
-        secure: false,
-        pathRewrite: { "^/relayer": "" },
-      },
-    ],
   },
   resolve: {
     fallback: {
