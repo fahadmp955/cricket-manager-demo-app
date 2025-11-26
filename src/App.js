@@ -131,7 +131,12 @@ function App() {
       const convertedObj = JSON.parse(signedPayload);
       const res = await fetch(
         `${process.env.REACT_APP_RELAYER_API_URL}/api/v1/relayers/glhf-example/transactions/${convertedObj.jobId}`,
-        { method: "GET" }
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_RELAYER_BEARER}`,
+          },
+        }
       );
       const data = await res.json();
       setTxnStatusResponse(JSON.stringify(data, null, 2));
