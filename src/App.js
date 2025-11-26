@@ -268,7 +268,10 @@ function App() {
         {parsedTxnStatus?.data.hash && (
           <>
             <h2>6. Verify on Chain</h2>
-
+            <textarea
+              value={`https://glhf-testnet.explorer.caldera.xyz/tx/${parsedTxnStatus?.data.hash}`}
+              readOnly
+            />
             <button
               onClick={() =>
                 window.open(
