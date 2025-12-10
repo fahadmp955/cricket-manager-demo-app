@@ -252,7 +252,10 @@ function App() {
         {signedPayload && (
           <>
             <h2>3. Submit Transaction</h2>
-            <textarea value={signedPayload} readOnly />
+            <textarea
+              value={signedPayload}
+              onChange={(e) => setSignedPayload(e.target.value)}
+            />
             <br />
 
             <button onClick={handleSubmitTransaction} disabled={loadingSubmit}>
