@@ -235,6 +235,7 @@ function App() {
             <textarea
               placeholder="Transaction Payload"
               value={transactionPayload}
+              onChange={(e) => setTransactionPayload(e.target.value)}
             />
             <br />
 
