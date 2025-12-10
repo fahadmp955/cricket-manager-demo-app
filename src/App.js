@@ -235,7 +235,6 @@ function App() {
             <textarea
               placeholder="Transaction Payload"
               value={transactionPayload}
-              readOnly
             />
             <br />
 
