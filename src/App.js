@@ -165,7 +165,7 @@ function App() {
     setLoadingTxnStatus(true);
     try {
       const res = await signedFetch(
-        `${process.env.REACT_APP_API_URL}/get-info/get-relayer-transaction?jobId=${parsedJobStatus.jobId}`,
+        `${process.env.REACT_APP_API_URL}/get-info/get-transaction-details?jobId=${parsedJobStatus.jobId}`,
         {
           method: "GET",
         }
